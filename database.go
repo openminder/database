@@ -2,7 +2,6 @@ package database
 
 import (
 	"database/sql"
-	"fmt"
 
 	// The MYSQL driver import
 
@@ -42,7 +41,6 @@ func (dbi *DBInformation) GetMysqlString() string {
 func GetDB(dbi DBInformation) *sql.DB {
 	var err error
 	if db == nil {
-		fmt.Println(dbi.GetMysqlString())
 		db, err = sql.Open("mysql", dbi.GetMysqlString())
 		if err != nil {
 			panic(err)
